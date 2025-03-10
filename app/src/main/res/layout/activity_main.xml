@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/txt_title"
+        android:layout_width="413dp"
+        android:layout_height="80dp"
+        android:background="#457b9d"
+        android:gravity="center"
+        android:text="TLUContact"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/search_contact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/search_view_border"
+        app:queryHint="Tìm kiếm"
+        app:iconifiedByDefault="false"/>
+
+   <RelativeLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+
+       <androidx.viewpager2.widget.ViewPager2
+           android:id="@+id/view_pager"
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:contentDescription="Contact"
+           android:layout_above="@+id/navigation"/>
+
+       <com.google.android.material.bottomnavigation.BottomNavigationView
+           android:id="@+id/navigation"
+           android:layout_width="match_parent"
+           android:layout_height="64dp"
+           android:layout_alignParentBottom="true"
+           android:background="#457b9d"
+           app:labelVisibilityMode="labeled"
+           app:itemTextColor="@color/color_navigation_contact"
+           app:itemIconTint="@color/color_navigation_contact"
+           app:menu="@menu/menu_navigation_contact"/>
+   </RelativeLayout>
+</LinearLayout>
