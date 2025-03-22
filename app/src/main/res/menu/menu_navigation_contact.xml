@@ -2,8 +2,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/contact_CBGV"
+        android:icon="@drawable/user"
         android:title="CBGV"/>
     <item
         android:id="@+id/contact_DV"
+        android:icon="@drawable/user"
         android:title="Don vi" />
 </menu>

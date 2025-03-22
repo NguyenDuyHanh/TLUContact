@@ -1,6 +1,8 @@
 package com.example.tlucontact;
 
-public class Donvi {
+import java.io.Serializable;
+
+public class Donvi  implements Serializable {
     private String tenDV;
     private String sdtDV;
     private String diaChi;

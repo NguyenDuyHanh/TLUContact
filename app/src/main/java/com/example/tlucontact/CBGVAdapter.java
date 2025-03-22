@@ -16,6 +16,13 @@ public class CBGVAdapter extends RecyclerView.Adapter<CBGVAdapter.CBViewHolder> 
     private List<CBGV> listCB = new ArrayList<>();
     private IClickItemCBGV iClickItemCBGV;
 
+    // ✅ Thêm phương thức updateList để cập nhật danh sách khi tìm kiếm
+    public void updateList(List<CBGV> newList) {
+        listCB.clear();
+        listCB.addAll(newList);
+        notifyDataSetChanged();
+    }
+
     public interface IClickItemCBGV {
         void onClickItemCBGV(CBGV cbgv);
     }

@@ -1,5 +1,6 @@
 package com.example.tlucontact;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -8,6 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -22,6 +25,9 @@ import java.util.List;
 public class DVFragment extends Fragment {
     private RecyclerView recyclerView;
     private View view;
+    private DVAdapter dvAdapter;
+    private List<Donvi> listDV;
+    private List<Donvi> filteredList;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -67,7 +73,9 @@ public class DVFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        List<Donvi> listDV = new ArrayList<>();
+        listDV = new ArrayList<>();
+        filteredList = new ArrayList<>();
+
         listDV.add(new Donvi("Cong Nghe Thong Tin","0123456789", "Toa A1"));
         listDV.add(new Donvi("Cong Trinh","0123456789", "Toa A2"));
         listDV.add(new Donvi("Dien Tu","0123456789", "Toa A3"));
@@ -78,7 +86,7 @@ public class DVFragment extends Fragment {
         listDV.add(new Donvi("Cong Nghe Hoa Hoc","0123456789", "Toa D1"));
         listDV.add(new Donvi("Thuong Mai Dien Tu","0123456789", "Toa D0"));
 
-
+        filteredList.addAll(listDV);
 
 
         // Inflate the layout for this fragment
@@ -87,9 +95,34 @@ public class DVFragment extends Fragment {
         // duong line giua cac item
         RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(requireContext(), DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(itemDecoration);
-        DVAdapter dvAdapter = new DVAdapter(listDV);
+
+        dvAdapter = new DVAdapter(filteredList, new DVAdapter.IClickItemDV() {
+            @Override
+            public void onClickItem(Donvi dv) {
+                Intent intent = new Intent(requireContext(), DetailDVActivity.class);
+                intent.putExtra("dv_data", dv);
+                startActivity(intent);
+            }
+        });
         recyclerView.setAdapter(dvAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
         return view;
     }
+
+    public void filterList(String text) {
+        if (filteredList != null) {
+            filteredList.clear();
+        }
+        if (text.isEmpty()) {
+            filteredList.addAll(listDV);
+        } else {
+            for (Donvi dv : listDV) {
+                if (dv.getTenDV().toLowerCase().contains(text.toLowerCase())) {
+                    filteredList.add(dv);
+                }
+            }
+        }
+        dvAdapter.notifyDataSetChanged(); // Thông báo cập nhật giao diện
+    }
+
 }

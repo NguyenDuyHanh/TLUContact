@@ -12,10 +12,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DVAdapter extends RecyclerView.Adapter<DVAdapter.DVViewHolder> {
-    List<Donvi> listDV = new ArrayList<>();
+    private List<Donvi> listDV = new ArrayList<>();
+    private IClickItemDV iClickItemDV;
 
-    public DVAdapter(List<Donvi> listDV) {
+    public interface IClickItemDV {
+        void onClickItem(Donvi dv);
+    }
+
+    public DVAdapter(List<Donvi> listDV, IClickItemDV iClickItemDV) {
         this.listDV = listDV;
+        this.iClickItemDV = iClickItemDV;
+    }
+
+    public void updateList(List<Donvi> newList) {
+        listDV.clear();
+        listDV.addAll(newList);
+        notifyDataSetChanged();
     }
 
     @NonNull
@@ -29,6 +41,13 @@ public class DVAdapter extends RecyclerView.Adapter<DVAdapter.DVViewHolder> {
     public void onBindViewHolder(@NonNull DVViewHolder holder, int position) {
         Donvi dv = listDV.get(position);
         holder.bind(dv);
+        holder.txtName.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                iClickItemDV.onClickItem(dv);
+            }
+        });
     }
 
     @Override
