@@ -70,8 +70,7 @@ public class DetailCBGVActivity extends AppCompatActivity {
         // Nút quay lại
         findViewById(R.id.btn_back).setOnClickListener(v -> finish());
 
-
-        // Xử lý sự kiện khi nhấn nút "Xong"
+        // Xử lý sự kiện khi nhấn nút "Sửa"
         txtUpdate = findViewById(R.id.txt_update_cbgv);
         txtUpdate.setOnClickListener(v -> {
             Intent intent = new Intent(DetailCBGVActivity.this, UpdateCBGV.class);

@@ -53,7 +53,6 @@ public class CBGVFragment extends Fragment {
             Intent intent = new Intent(requireContext(), DetailCBGVActivity.class);
             intent.putExtra("cbgv_data", cbgv); // Truyền dữ liệu sang Activity chi tiết
             startActivity(intent);
-            startActivity(intent);
         });
 
         recyclerView.setAdapter(cbgvAdapter); // Gán Adapter cho RecyclerView
