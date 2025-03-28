@@ -3,40 +3,149 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        >
+
+        <ImageView
+            android:id="@+id/img_DV"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/icons8_department_50"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/btn_update_dv"
+            android:layout_width="48dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_btn_update"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:text="Sửa"
+            android:textSize="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <TextView
         android:id="@+id/txt_name_detail_dv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="20dp"
         android:text="TextView"
+        android:layout_marginBottom="10dp"
         android:textAlignment="center"
-        android:textSize="20sp"
+        android:textSize="24sp"
+        android:textStyle="bold"/>
 
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="start">
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_title_sdt_detail_dv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:paddingStart="20dp"
+                android:text="Di động" />
+
+            <TextView
+                android:id="@+id/txt_sdt_detail_dv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:paddingStart="20dp"
+                android:text="TextView" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="end">
+
+            <ImageView
+                android:id="@+id/icon_message_dv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/icons8_message_24" />
+
+            <ImageView
+                android:id="@+id/icon_call_dv"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginRight="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/icons8_call_50" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#457b9d"/>
 
     <TextView
-        android:id="@+id/txt_sdt_detail_dv"
+        android:id="@+id/txt_title_dc_detail_dv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:padding="20dp"
-        android:text="TextView" />
+        android:paddingStart="20dp"
+        android:paddingTop="8dp"
+        android:text="Địa chỉ" />
 
     <TextView
         android:id="@+id/txt_diaChi_detail_dv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
-        android:padding="20dp"
+        android:paddingLeft="20dp"
+        android:paddingBottom="8dp"
         android:text="TextView" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#457b9d"/>
 
     <Button
         android:id="@+id/btn_back_dv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:text="Back"
-        android:background="#457b9d"/>
+        android:backgroundTint="#457b9d"/>
 </LinearLayout>

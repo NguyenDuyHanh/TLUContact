@@ -1,9 +1,12 @@
-package com.example.tlucontact;
+package com.example.tlucontact.adapter;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
+
+import com.example.tlucontact.view.fragment.CBGVFragment;
+import com.example.tlucontact.view.fragment.DVFragment;
 
 public class ViewPagerAdapter extends FragmentStateAdapter {
 

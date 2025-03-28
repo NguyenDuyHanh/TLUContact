@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/update_contact_dv"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Thanh tiêu đề -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingBottom="10dp">
+
+            <TextView
+                android:id="@+id/btn_cancel_update_dv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hủy"
+                android:textSize="20dp"
+                android:textColor="#457b9d"
+                android:padding="10dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sửa liên hệ"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_weight="3"
+                android:gravity="center"/>
+
+            <TextView
+                android:id="@+id/btn_done_update_dv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Xong"
+                android:textSize="20dp"
+                android:padding="10dp"
+                android:layout_weight="1"
+                android:gravity="end"/>
+        </LinearLayout>
+
+        <!-- Ảnh đại diện -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="20dp"
+            android:paddingBottom="20dp">
+
+            <ImageView
+                android:id="@+id/img_avatar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@drawable/icons8_department_50"
+                android:scaleType="centerCrop"/>
+
+            <Button
+                android:id="@+id/btn_add_photo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thêm ảnh"
+                android:backgroundTint="#457b9d"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+
+        <!-- Các trường nhập liệu -->
+        <EditText
+            android:id="@+id/edt_tenDV_update"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Tên đơn vị"
+            android:background="@drawable/border_edt"
+            android:textColorHint="#A9A9A9"
+            android:textColor="@color/black"
+            android:padding="10dp"/>
+
+        <EditText
+            android:id="@+id/edt_sdt_update_dv"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="số điện thoại"
+            android:background="@drawable/border_edt"
+            android:textColorHint="#A9A9A9"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            android:padding="10dp"/>
+
+        <EditText
+            android:id="@+id/edt_diaChi_update_dv"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Địa chỉ"
+            android:background="@drawable/border_edt"
+            android:textColorHint="#A9A9A9"
+            android:textColor="@color/black"
+            android:layout_marginTop="5dp"
+            android:padding="10dp"/>
+
+    </LinearLayout>
+</ScrollView>
